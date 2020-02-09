@@ -13,19 +13,12 @@ ex4tests = [
                 
            ],
         testGroup "headSpace group" [
-                testProperty "headSpaceProp" headSpaceProp
-                
-           ],
-        testGroup "transpose group" [
-                testProperty "transposeLengthProp" transposeLengthProp
-                
-           ]        ]
+                testProperty "headSpaceProp" headSpaceProp     
+           ]
+        ]
 
 lengthProp a = length (safeTail a) == 0 || (length a - 1) == length (safeTail a)
   where types = (a :: String)
 
-headSpaceProp a = headSpace a == "" || headSpace a == (head a):""
-  where types = (a :: String)
-
-transposeLengthProp a = (length $ transpose a) == (length a)
+headSpaceProp a = headSpace a == " " || headSpace a == (head a):""
   where types = (a :: String)
