@@ -31,4 +31,4 @@ headSpace (c:_) = [c]
 
 safeTail::[a] -> [a]
 safeTail [] = []
-safeTail as = tail as                					            
+safeTail as = tail as
